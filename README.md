@@ -57,7 +57,7 @@ curl --location 'http://3.144.138.204:8000/api/produtores/' \
 
 ### Example Request
 
-`GET /dashboar/`
+`GET /dashboard/`
 ```bash
 curl --location ''http://3.144.138.204:8000/api/dashboard' \
 ```
