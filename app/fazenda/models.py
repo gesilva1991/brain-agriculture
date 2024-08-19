@@ -23,7 +23,8 @@ class ProdutorRural(models.Model):
         ("Cana de Açúcar", "Cana de Açúcar"),
     ]
 
-    nome = models.CharField(max_length=100)
+    nome_produtor = models.CharField(max_length=100)
+    nome_fazenda = models.CharField(max_length=100)
     cpf = models.CharField(
         max_length=11, validators=[cpf_validator], unique=True, blank=True, null=True
     )

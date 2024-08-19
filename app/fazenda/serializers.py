@@ -8,7 +8,8 @@ class ProdutorRuralSerializer(serializers.ModelSerializer):
         model = ProdutorRural
         fields = [
             "id",
-            "nome",
+            "nome_produtor",
+            "nome_fazenda",
             "cpf",
             "cnpj",
             "cidade",
