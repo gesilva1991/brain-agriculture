@@ -2,7 +2,7 @@
 PGDATABASE=postgres
 PGUSER=postgres
 PGPASSWORD=postgres
-PGHOST=localhost
+PGHOST=db
 PGPORT=5432
 
 # DJANGO
