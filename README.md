@@ -21,7 +21,7 @@ REST API
   $ python manage.py test
 ```
 
-## Register a new User
+## Register a new Producers
 
 ### Example Request
 
@@ -64,15 +64,7 @@ curl --location ''http://3.144.138.204:8000/api/dashboard' \
 ### Example Response
 ```bash
 {
-    "id": 1,
-    "nome": "João da Silva",
-    "cpf": "12345678901",
-    "cnpj": null,
-    "cidade": "São Paulo",
-    "estado": "SP",
-    "area_total": 100.0,
-    "area_agricultavel": 60.0,
-    "area_vegetacao": 30.0,
-    "culturas_plantadas": "Soja"
+	"total_fazendas": 1,
+	"uso_do_solo": 1
 }
 ```
