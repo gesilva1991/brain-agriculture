@@ -27,7 +27,7 @@ REST API
 
 `POST /register/`
 ```bash
-curl --location 'http//127.0.0.1:8000/api/produtores-rurais/' \
+curl --location 'http://3.144.138.204:8000/api/produtores/' \
 --data-raw '{
     "nome": "João da Silva",
     "cpf": "12345678901",
@@ -38,6 +38,28 @@ curl --location 'http//127.0.0.1:8000/api/produtores-rurais/' \
     "area_vegetacao": 30.0,
     "culturas_plantadas": "Soja"
 }'
+```
+### Example Response
+```bash
+{
+    "id": 1,
+    "nome": "João da Silva",
+    "cpf": "12345678901",
+    "cnpj": null,
+    "cidade": "São Paulo",
+    "estado": "SP",
+    "area_total": 100.0,
+    "area_agricultavel": 60.0,
+    "area_vegetacao": 30.0,
+    "culturas_plantadas": "Soja"
+}
+```
+
+### Example Request
+
+`GET /dashboar/`
+```bash
+curl --location ''http://3.144.138.204:8000/api/dashboard' \
 ```
 ### Example Response
 ```bash
