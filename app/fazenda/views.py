@@ -14,16 +14,14 @@ class DashboardViewSet(viewsets.ModelViewSet):
     queryset = ProdutorRural.objects.all()
     serializer_class = DashSerializer
 
-
     def list(self, request):
         total_fazendas = ProdutorRural.objects.count()
-        
-        # Gráficos de pizza   
-        
+
+        # Gráficos de pizza
+
         data = {
-            'total_fazendas': total_fazendas,
-           
-            'uso_do_solo': total_fazendas,
+            "total_fazendas": total_fazendas,
+            "uso_do_solo": total_fazendas,
         }
 
         return Response(data)

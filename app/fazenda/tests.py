@@ -12,14 +12,14 @@ class ProdutorRuralModelTest(TestCase):
     def setUp(self):
         self.valid_data = {
             "nome_produtor": "João da Silva",
-		    "nome_fazenda": "serra da pena",
+            "nome_fazenda": "serra da pena",
             "cpf": "12345678901",
             "cidade": "São Paulo",
             "estado": "SP",
             "area_total": 100.0,
             "area_agricultavel": 60.0,
             "area_vegetacao": 30.0,
-            "culturas_plantadas": "Soja"
+            "culturas_plantadas": "Soja",
         }
 
         self.invalid_area_data = self.valid_data.copy()
@@ -56,7 +56,7 @@ class ProdutorRuralModelTest(TestCase):
         # Test CPF and CNPJ validation (should raise an error)
         produtor = ProdutorRural(
             nome_produtor="João da Silva",
-            nome_fazenda ="serra da pena",
+            nome_fazenda="serra da pena",
             cpf="12345678901",
             cnpj="12345678000195",
             cidade="São Paulo",
@@ -75,7 +75,7 @@ class ProdutorRuralAPITests(APITestCase):
     def setUp(self):
         self.valid_data = {
             "nome_produtor": "João da Silva",
-		    "nome_fazenda": "serra da pena",
+            "nome_fazenda": "serra da pena",
             "cidade": "São Paulo",
             "estado": "SP",
             "area_total": 100.0,
@@ -85,9 +85,7 @@ class ProdutorRuralAPITests(APITestCase):
         }
 
     def test_produtor_create(self):
-        response = self.client.post(
-            "/api/produtores/", self.valid_data, format="json"
-        )
+        response = self.client.post("/api/produtores/", self.valid_data, format="json")
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
         self.assertEqual(response.data["nome_produtor"], "João da Silva")
 
@@ -97,13 +95,11 @@ class ProdutorRuralAPITests(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
     def test_produtor_update(self):
-        response = self.client.post(
-            "/api/produtores/", self.valid_data, format="json"
-        )
+        response = self.client.post("/api/produtores/", self.valid_data, format="json")
         produtor_id = response.data["id"]
         update_data = {
             "nome_produtor": "João Atualizado",
-		    "nome_fazenda": "serra da pena Atualizado",
+            "nome_fazenda": "serra da pena Atualizado",
             "cpf": "12345678901",
             "cidade": "São Paulo Atualizado",
             "estado": "SP",
@@ -119,9 +115,7 @@ class ProdutorRuralAPITests(APITestCase):
         self.assertEqual(response.data["nome_produtor"], "João Atualizado")
 
     def test_produtor_delete(self):
-        response = self.client.post(
-            "/api/produtores/", self.valid_data, format="json"
-        )
+        response = self.client.post("/api/produtores/", self.valid_data, format="json")
         produtor_id = response.data["id"]
         response = self.client.delete(f"/api/produtores/{produtor_id}/")
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)

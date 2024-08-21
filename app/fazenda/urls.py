@@ -4,7 +4,7 @@ from .views import ProdutorRuralViewSet, DashboardViewSet
 
 router = DefaultRouter()
 router.register(r"produtores", ProdutorRuralViewSet)
-router.register(r'dashboard', DashboardViewSet, basename='dashboard')
+router.register(r"dashboard", DashboardViewSet, basename="dashboard")
 
 
 urlpatterns = [

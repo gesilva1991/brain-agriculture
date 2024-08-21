@@ -1,6 +1,7 @@
 FROM python:3.12.3-alpine3.19
 
-COPY ./requirements.txt /tmp/requirements.txt
+COPY ./requirements/base.txt /tmp/requirements.txt
+COPY /.env /.env
 COPY ./app /app
 WORKDIR /app
 EXPOSE 8000
