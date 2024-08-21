@@ -60,6 +60,7 @@ class DashSerializer(serializers.ModelSerializer):
             "area_vegetacao",
             "culturas_plantadas",
         ]
+
     def validate(self, data):
         """
         Valida se o CPF e o CNPJ são fornecidos ao mesmo tempo.
