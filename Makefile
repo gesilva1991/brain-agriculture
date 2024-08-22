@@ -12,9 +12,14 @@ up-prod:
 	cp ./devtools/dotenv.prod .env
 	cd app/ && . ../entrypoint.sh
 
-t:
-	cd app/ && . ../entrypoint.sh
-	
-	
-	
+down:
+	docker compose down
+
+clean:
+	docker compose down
+	docker rmi brain-agri-django_gunicorn
+	docker rmi brain-agri-nginx
+	docker rmi postgres
+	docker volume rm brain-agri_db-pg-data
+	docker volume rm brain-agri_static
 	
