@@ -1,7 +1,6 @@
 FROM python:3.12.3-alpine3.19
 
 COPY ./app /app
-COPY /.env /.env
 COPY ./requirements.txt .
 COPY ./requirements ./requirements/
 
@@ -21,6 +20,8 @@ RUN python -m venv /py && \
         --disabled-password \
         --no-create-home \
         django-user
+
+COPY ./devtools/dotenv.prod /.env
 
 ENV PATH="/py/bin:$PATH"
 
