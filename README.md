@@ -7,13 +7,13 @@ REST API
   $ git clone https://github.com/gesilva1991/brain-agri.git
   $ cd brain-agriculture
 ```
-2 - Configure environment variables
+2 - Configure environment develop or test or prod
 ```bash
- create .env based on .env-exemple
+ cp /devtools/dotenv.dev /.env
 ```
 3 - Start docker compose
 ```bash
-  $ docker compose up --build
+  $ docker compose up --build or make up-dev
 ```
 4 - Start tests
 ```bash
