@@ -1,9 +1,12 @@
 FROM python:3.12.3-alpine3.19
 
-COPY ./requirements/base.txt /tmp/requirements.txt
-COPY /.env /.env
 COPY ./app /app
+COPY /.env /.env
+COPY ./requirements.txt .
+COPY ./requirements ./requirements/
+
 WORKDIR /app
+
 EXPOSE 8000
 
 RUN python -m venv /py && \
@@ -11,7 +14,7 @@ RUN python -m venv /py && \
     apk add --update --no-cache postgresql-client && \
     apk add --update --no-cache --virtual .tmp-build-deps \
         build-base postgresql-dev musl-dev && \
-    /py/bin/pip install -r /tmp/requirements.txt && \
+    /py/bin/pip install -r /requirements.txt && \
     rm -rf /tmp && \
     apk del .tmp-build-deps && \
     adduser \
