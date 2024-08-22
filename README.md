@@ -13,9 +13,13 @@ REST API
 ```
 3 - Start docker compose
 ```bash
-  $ docker compose up --build or make up-dev
+  $ docker compose up --build make up-dev
 ```
-4 - Start tests
+4 - Start server local dev or test or prod
+```bash
+  $ make up-dev or make up-prod
+```
+5 - Start tests
 ```bash
   $ cd app/
   $ python manage.py test
