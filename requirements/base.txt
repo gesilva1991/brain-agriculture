@@ -1,6 +1,5 @@
 setuptools
 asgiref==3.8.1
-blinker==1.8.2
 channels==4.1.0
 click==8.1.7
 dash==2.9.3
