@@ -9,7 +9,7 @@ REST API
 ```
 2 - Configure environment develop or test or prod
 ```bash
- cp /devtools/dotenv.dev /.env
+ cp /devtools/dotenv.dev /.env or cp /devtools/dotenv.prod /.env
 ```
 3 - Start docker compose
 ```bash
